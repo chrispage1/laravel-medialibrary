@@ -50,7 +50,7 @@ class FileManipulator
             return $this;
         }
 
-        $temporaryDirectory = TemporaryDirectory::create();
+        $temporaryDirectory = TemporaryDirectory::create($media->getKey() . '-');
 
         $copiedOriginalFile = app(Filesystem::class)->copyFromMediaLibrary(
             $media,
